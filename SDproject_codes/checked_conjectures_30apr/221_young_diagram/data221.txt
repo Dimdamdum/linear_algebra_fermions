@@ -1,0 +1,100 @@
+Below here, w are input vectors, vbest are output v vectors, vconj are conjecured optimal v vectors
+
+########################################################################################
+PART 1
+
+w vectors in 1st or 2nd regime (i did not test many) that is the conjectured vbest is given by:
+vconj=[a,a,a,b,b]
+with a=(w[2]+w[3])/2, b=(w[0]+w[1]+w[4])/3 or a=(w[1]+w[2])/2, b=(w[0]+w[3]+w[4])/3
+
+w:  [0.1780275 0.432248  0.588337  0.6422274 0.7034827]
+vbest:  [0.5079114 0.5079124 0.5079131 0.5102907 0.5102948]
+vconj:  [0.5079125 0.5079125 0.5079125 0.5102925 0.5102925]
+first regime up to Imax accuracy  8.251312522133958e-09
+
+########################################################################################
+PART 2
+
+w vectors in "identity" regime
+that is vconj=[a,a,a,a,a] with a=trace/5
+
+w:  [0.083     0.3054608 0.6210932 0.6811499 0.7256029]
+vbest:  [0.4832607 0.483261  0.4832611 0.4832619 0.4832619]
+vconj:  [0.4832613 0.4832613 0.4832613 0.4832613 0.4832613]
+identity regime up to Imax accuracy  3.348432642269472e-12
+
+w:  [0.1784217 0.2180715 0.3408552 0.5872474 0.9370929]
+vbest:  [0.4523368 0.4523372 0.4523375 0.4523382 0.4523392]
+vconj:  [0.4523377 0.4523377 0.4523377 0.4523377 0.4523377]
+identity regime up to Imax accuracy  1.0270007066992548e-11
+
+w:  [0.1180447 0.2066906 0.6161919 0.6566956 0.9920978]
+vbest:  [0.5179432 0.5179434 0.5179443 0.5179443 0.5179454]
+vconj:  [0.5179441 0.5179441 0.5179441 0.5179441 0.5179441]
+identity regime up to Imax accuracy  9.324097050011915e-12
+
+w:  [0.1620859 0.3553148 0.4286936 0.4876804 0.8153951]
+vbest:  [0.4498333 0.4498337 0.449834  0.4498342 0.4498344]
+vconj:  [0.4498339 0.4498339 0.4498339 0.4498339 0.4498339]
+identity regime up to Imax accuracy  2.063238468963391e-12
+
+w:  [0.1187972 0.4195626 0.7975029 0.8294509 0.9406874]
+vbest:  [0.6211994 0.6212    0.6212002 0.6212005 0.6212011]
+vconj:  [0.6212002 0.6212002 0.6212002 0.6212002 0.6212002]
+identity regime up to Imax accuracy  4.9888981834556034e-12
+
+w:  [0.1307809 0.3336407 0.6361641 0.6473684 0.9668256]
+vbest:  [0.542955  0.5429552 0.5429563 0.5429563 0.5429567]
+vconj:  [0.5429559 0.5429559 0.5429559 0.5429559 0.5429559]
+identity regime up to Imax accuracy  6.517453243759519e-12
+
+From kaustav's list:
+w: [0.2,0.3,0.7,0.7,0.8]
+vbest:  [0.53999924 0.53999957 0.53999977 0.54000068 0.54000074]
+vconj:  [0.54 0.54 0.54 0.54 0.54]
+identity regime up to Imax accuracy  5.304201522449148e-12
+
+From kaustav's list:
+w: [0.  0.2 0.3 0.6 0.7]
+vbest:  [0.3599999 0.36      0.36      0.36      0.3600001]
+vconj:  [0.36 0.36 0.36 0.36 0.36]
+identity regime up to Imax accuracy  2.220446049250313e-14
+
+From kaustav's list:
+w : [0.  0.5 0.6 0.8 0.9]
+vbest : [0.5599999 0.56      0.56      0.56      0.5600001]
+vconj : [0.56 0.56 0.56 0.56 0.56]
+identity regime up to Imax accuracy  3.730349362740526e-14
+
+########################################################################################
+PART 3
+
+here are threew vectors that we need to understand better
+They seem out of the regimes described above (or are we not sampling enough and falling in local minima?)
+
+(1) From kaustav's list:
+w: [0.5 0.5 0.5 0.8 0.8]
+vbest : [0.59999999 0.6        0.60000001 0.65       0.65      ]
+vconj: clear what schur horn procedure is going on here!!!! new regime?
+
+(2)
+w: [0.07742762, 0.09840953, 0.72567301, 0.80270683, 0.80799754])
+doesnt reach identity
+v best outputs i got:
+[0.44963178, 0.45115476, 0.53197505, 0.53595183, 0.54350111]
+[0.45048939, 0.45441945, 0.53442938, 0.53634884, 0.53652747]
+[0.45027314, 0.45052812, 0.53504963, 0.5368634, 0.53950024]
+[0.4475294, 0.45431501, 0.53099806, 0.53182823, 0.54754383]
+[0.44881994, 0.45111139, 0.52852434, 0.54162961, 0.54212926]
+[0.452492 0.452624 0.534641 0.535966 0.536492]
+Imax value is always well separated from 5*h(t/5) by like 0.02 or 0.03
+Best Imax value: 4.975945042205038
+i think [(w[1]+w[4])/2,(w[1]+w[4])/2, (w[0]+w[2]+w[3])/3,(w[0]+w[2]+w[3])/3,(w[0]+w[2]+w[3])/3 ]
+could be the analytical vbest!! this would yield Imax(w) = 4.976567529590909. It works also for (1)
+
+(3) From kaustav's list:
+w: [0.1, 0.2, 0.4, 0.6, 0.9]
+I lost vbest but it was hard to interpret; maybe have to run longer
+
+
+
